@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/bear-virtual-sproul/static/css/main.19713a12.chunk.css",
+    "main.js": "/bear-virtual-sproul/static/js/main.8066b0fb.chunk.js",
+    "main.js.map": "/bear-virtual-sproul/static/js/main.8066b0fb.chunk.js.map",
+    "runtime-main.js": "/bear-virtual-sproul/static/js/runtime-main.12c3f87d.js",
+    "runtime-main.js.map": "/bear-virtual-sproul/static/js/runtime-main.12c3f87d.js.map",
+    "static/css/2.dad1575f.chunk.css": "/bear-virtual-sproul/static/css/2.dad1575f.chunk.css",
+    "static/js/2.052909c6.chunk.js": "/bear-virtual-sproul/static/js/2.052909c6.chunk.js",
+    "static/js/2.052909c6.chunk.js.map": "/bear-virtual-sproul/static/js/2.052909c6.chunk.js.map",
+    "index.html": "/bear-virtual-sproul/index.html",
+    "precache-manifest.2c3faaf8f96cf8a54b081f6a7b7f465a.js": "/bear-virtual-sproul/precache-manifest.2c3faaf8f96cf8a54b081f6a7b7f465a.js",
+    "service-worker.js": "/bear-virtual-sproul/service-worker.js",
+    "static/css/2.dad1575f.chunk.css.map": "/bear-virtual-sproul/static/css/2.dad1575f.chunk.css.map",
+    "static/css/main.19713a12.chunk.css.map": "/bear-virtual-sproul/static/css/main.19713a12.chunk.css.map",
+    "static/js/2.052909c6.chunk.js.LICENSE.txt": "/bear-virtual-sproul/static/js/2.052909c6.chunk.js.LICENSE.txt",
+    "static/media/mdb.css": "/bear-virtual-sproul/static/media/arrow_right.8ef6a08c.svg",
+    "static/media/all.min.css": "/bear-virtual-sproul/static/media/fa-solid-900.f3a7d3b5.woff",
+    "static/media/oski-big.png": "/bear-virtual-sproul/static/media/oski-big.7232e319.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.12c3f87d.js",
+    "static/css/2.dad1575f.chunk.css",
+    "static/js/2.052909c6.chunk.js",
+    "static/css/main.19713a12.chunk.css",
+    "static/js/main.8066b0fb.chunk.js"
+  ]
+}
