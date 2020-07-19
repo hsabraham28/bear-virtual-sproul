@@ -1,26 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Component } from 'react';
+import './Assets/css/default.min.css';
+import Header from './components/headerComponent/header';
+import Search from './components/searchComponent/search';
+import Filter from './components/filterComponent/filter';
+import Sort from './components/sortComponent/sort';
+import Result from './components/resultComponent/result';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+
+      <Header />
+
+
+<div className='rowB'>
+      <Search />
+      <div className='colA'>
+      <Filter />
+      </div>
+      <Sort />
+
     </div>
-  );
+    <Result />
+    
+    </div>
+      );
+  }
 }
+
 
 export default App;
