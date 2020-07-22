@@ -17,33 +17,33 @@ class Filter extends Component {
         </h3>
 
 
-  <div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckboxTech" value="optionTech"/>
-  <label class="form-check-label" for="inlineCheckbox1">Tech</label>
+  <div className="form-check form-check-inline">
+  <input className="form-check-input" type="checkbox" id="inlineCheckboxTech" value="optionTech"/>
+  <label className="form-check-label" htmlFor="inlineCheckbox1">Tech</label>
 </div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckboxMusic" value="optionMusic"/>
-  <label class="form-check-label" for="inlineCheckbox2">Music</label>
+<div className="form-check form-check-inline">
+  <input className="form-check-input" type="checkbox" id="inlineCheckboxMusic" value="optionMusic"/>
+  <label className="form-check-label" htmlFor="inlineCheckbox2">Music</label>
 </div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckboxArt" value="optionArt"/>
-  <label class="form-check-label" for="inlineCheckbox1">Art</label>
+<div className="form-check form-check-inline">
+  <input className="form-check-input" type="checkbox" id="inlineCheckboxArt" value="optionArt"/>
+  <label className="form-check-label" htmlFor="inlineCheckbox1">Art</label>
 </div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckboxGreeks" value="optionGreeks"/>
-  <label class="form-check-label" for="inlineCheckbox2">Greeks</label>
+<div className="form-check form-check-inline">
+  <input className="form-check-input" type="checkbox" id="inlineCheckboxGreeks" value="optionGreeks"/>
+  <label className="form-check-label" htmlFor="inlineCheckbox2">Greeks</label>
 </div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckboxBusiness" value="optionBusiness"/>
-  <label class="form-check-label" for="inlineCheckbox1">Business</label>
+<div className="form-check form-check-inline">
+  <input className="form-check-input" type="checkbox" id="inlineCheckboxBusiness" value="optionBusiness"/>
+  <label className="form-check-label" htmlFor="inlineCheckbox1">Business</label>
 </div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckboxGovernment" value="optionGovernment"/>
-  <label class="form-check-label" for="inlineCheckbox2">Government</label>
+<div className="form-check form-check-inline">
+  <input className="form-check-input" type="checkbox" id="inlineCheckboxGovernment" value="optionGovernment"/>
+  <label className="form-check-label" htmlFor="inlineCheckbox2">Government</label>
 </div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckboxSize" value="optionSize"/>
-  <label class="form-check-label" for="inlineCheckbox1">Size &lt; 50</label>
+<div className="form-check form-check-inline">
+  <input className="form-check-input" type="checkbox" id="inlineCheckboxSize" value="optionSize"/>
+  <label className="form-check-label" htmlFor="inlineCheckbox1">Size &lt; 50</label>
 </div>
         </div>
       

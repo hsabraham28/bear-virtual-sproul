@@ -15,8 +15,8 @@ class Sort extends Component {
         Sort By
         </h1>
 
-        <div class="form-group">
-    <select class="form-control" id="exampleFormControlSelect1">
+        <div className="form-group">
+    <select className="form-control" id="exampleFormControlSelect1">
       <option>Popular</option>
       <option>2</option>
       <option>3</option>
