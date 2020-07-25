@@ -3,17 +3,16 @@ import { Component } from 'react';
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBRow, MDBCol, MDBView, MDBIcon } from 'mdbreact';
 import oski from './oski-big.png';
 
-console.log(oski);
 
 
 
 
 
-class Result extends Component {
-  render() {
+function Result(props){
+  
     return (
 
-      <div className="result-section">
+  <div className="result-section">
   <div className="rowOne">      
  <MDBRow>
       <MDBCol md='2'>
@@ -199,7 +198,7 @@ class Result extends Component {
    </div>
       );
   }
-}
+
 
 
 
