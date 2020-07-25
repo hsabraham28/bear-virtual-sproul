@@ -4,17 +4,16 @@ import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, 
 import oski from './oski-big.png';
 import ClubCard from './clubCardComponent/clubCard';
 
-console.log(oski);
 
 
 
 
 
-class Result extends Component {
-  render() {
+function Result(props){
+  
     return (
 
-      <div className="result-section">
+  <div className="result-section">
   <div className="rowOne">      
  <MDBRow>
 
@@ -54,7 +53,7 @@ class Result extends Component {
    </div>
       );
   }
-}
+
 
 
 
