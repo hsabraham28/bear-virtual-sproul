@@ -7,6 +7,7 @@ import Filter from './components/filterComponent/filter';
 import Sort from './components/sortComponent/sort';
 import Result from './components/resultComponent/result';
 import ClubComponent from './ClubComponent';
+import ClubCard from './components/resultComponent/clubCardComponent/clubCard'
 
 class App extends Component {
   constructor() {
@@ -27,18 +28,20 @@ class App extends Component {
       {
       this.setState({
       organizations: result
-      })
-    
+      })    
       }
   )
-  console.log(this.state.organizations)
   }
 
   render() {
-    return this.state.organizations.map(item => (
-      <ClubComponent name = {item.name} clubEmail = {item.clubEmail} clubSize = {item.size}/>
+    const mappedClubs = this.state.organizations.map(item => (
+      <ClubCard name = {item.name} info = {item.intro}/>
     ))
-    /** 
+
+    
+
+    
+
     return (
       <div className="App">
 
@@ -53,11 +56,11 @@ class App extends Component {
       <Sort />
 
     </div>
-    <Result />
+    <ClubComponent clubArray = {mappedClubs}/>
     
     </div>
       );
-      */
+    
 
   }
 }

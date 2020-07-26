@@ -8,8 +8,8 @@ console.log(oski);
 
 
 
-class ClubCard extends Component {
-  render() {
+function ClubCard(props){
+  
     return (
 
       <div className="clubLayout">
@@ -28,12 +28,12 @@ class ClubCard extends Component {
 
           <MDBCardBody cascade className='text-center'>
             <MDBCardTitle className='card-title'>
-              <strong>Club Name</strong>
+              <strong>{props.name}</strong>
             </MDBCardTitle>
 
 
             <MDBCardText>
-              Brief Introduction
+              {props.info}
             </MDBCardText>
 
             <MDBCol md='12' className='d-flex justify-content-center'>
@@ -45,9 +45,9 @@ class ClubCard extends Component {
       
 
   </div>
-      );
-  }
+  );
 }
+
 
 
 
