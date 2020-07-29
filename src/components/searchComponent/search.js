@@ -3,9 +3,12 @@ import { Component } from 'react';
 import { MDBCol, MDBFormInline, MDBIcon } from "mdbreact";
 
 
+/** A component that is responsible for sending GET search request to return list of clubs that match
+ * by exact name in search field
+ */
 class Search extends Component {
 
-  constructor() {
+  constructor(props) {
     super()
     this.state = {
       searchElementName: ""
