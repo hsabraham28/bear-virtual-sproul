@@ -1,6 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import { MDBCol, MDBFormInline, MDBIcon } from "mdbreact";
+import {Redirect} from "react-router-dom"
 
 
 /** A component that is responsible for sending GET search request to return list of clubs that match
@@ -11,7 +12,9 @@ class Search extends Component {
   constructor(props) {
     super()
     this.state = {
-      searchElementName: ""
+      searchElementName: "",
+      redirect: false,
+      fetchedData: []
     }
     this.changeSearchElementName = this.changeSearchElementName.bind(this)
     this.retrieveClubNameData = this.retrieveClubNameData.bind(this)
@@ -22,14 +25,34 @@ class Search extends Component {
   }
 
   retrieveClubNameData() {
+    /**
+     * if (response.status == 200) {
+        this.state.redirect = true
+      }
+     */
     
     fetch(`http://localhost:8081/searchByName/` + this.state.searchElementName)
-    .then(response => response.json())
-    .then(result => console.log(result)) 
-      
+    .then(response => 
+      response.json())
+    .then(result => {
+      this.state.fetchedData = result
+      console.log(this.state.fetchedData)
+      console.log(result)
+    })
     
+    if (this.state.fetchedData.length > 0) {
+      this.state.redirect = true
+      //Have a redirection to another page showing the results here!
+      if(this.state.redirect) {
+      //Redirect to an MPA here
+      
+      }
+    }
+    else {
+      //Redirect to some error page saying that no results were found
+    }
 
-    //console.log("pressed retrieve button")
+    
   }
 
   changeSearchElementName(event) {
