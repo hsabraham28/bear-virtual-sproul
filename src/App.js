@@ -14,10 +14,20 @@ class App extends Component {
     super()
     this.state = {
       organizations: [
-      ]
+      ],
+      searchDisplayName:""
   }
   this.componentDidMount = this.componentDidMount.bind(this)
+  this.updateOrganizations = this.updateOrganizations.bind(this)
 
+  }
+
+  updateOrganizations(name, childData) {
+      this.setState(
+        {organizations: childData,
+         searchDisplayName: name
+        }
+      )
   }
 
   async componentDidMount() {
@@ -50,13 +60,20 @@ class App extends Component {
 
 
 <div className='rowB'>
-      <Search />
+      <Search parentUpdateCB = {this.updateOrganizations}/>
       <div className='colA'>
       <Filter />
       </div>
       <Sort />
 
     </div>
+    {/** This part should rerender based off the search results! */}
+
+    {/**Conditional rendering should be done here to display "Search results for XYZ when search button is clicked" */}
+    
+    { this.state.searchDisplayName.length!= 0 && 
+    <h1> Search Results for {this.state.searchDisplayName}</h1>
+    }
     <ClubComponent clubArray = {mappedClubs}/>
     
     </div>

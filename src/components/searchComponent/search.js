@@ -59,6 +59,8 @@ class Search extends Component {
       this.state.fetchedData = result
       console.log(this.state.fetchedData)
       this.showFailureorSuccess()
+      this.props.parentUpdateCB(this.state.searchElementName, this.state.fetchedData)
+      console.log(this.state.searchElementName)
       //console.log(result)
     })
     
@@ -116,9 +118,7 @@ class Search extends Component {
         <h2>
       Here you can find where your interests are and contacts for various clubs.
         </h2>
-        <div className = "searchResults">
-           
-        </div>
+        
 
       {/** <FetchSuccess searchResponses = {this.state.fetchedData}/> */}
       
