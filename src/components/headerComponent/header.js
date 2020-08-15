@@ -2,7 +2,6 @@ import React from 'react';
 import { Component } from 'react';
 import oski from './oski-acc.png';
 
-console.log(oski);
 
 
 class Header extends Component {

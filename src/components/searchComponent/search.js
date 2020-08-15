@@ -1,7 +1,9 @@
 import React from 'react';
 import { Component } from 'react';
 import { MDBCol, MDBFormInline, MDBIcon } from "mdbreact";
-import {Redirect} from "react-router-dom"
+import FetchFailure from "./FetchResponses/FetchFailure"
+import FetchSuccess from "./FetchResponses/FetchSuccess"
+//import ClubCard from './components/resultComponent/clubCardComponent/clubCard'
 
 
 /** A component that is responsible for sending GET search request to return list of clubs that match
@@ -18,18 +20,37 @@ class Search extends Component {
     }
     this.changeSearchElementName = this.changeSearchElementName.bind(this)
     this.retrieveClubNameData = this.retrieveClubNameData.bind(this)
+    this.showFailureorSuccess = this.showFailureorSuccess.bind(this)
   }
 
   componentWillMount() {
     this.state.searchElementName = ""
   }
 
-  retrieveClubNameData() {
-    /**
-     * if (response.status == 200) {
-        this.state.redirect = true
+  showFailureorSuccess() {
+    if (this.state.fetchedData.length > 0) {
+      this.state.redirect = true
+      //Debugging if this logic is run
+      console.log("Response is a success: ", this.state.redirect)
+
+      
+      /**
+       * if(this.state.redirect) {
+      //Redirect to another page here if there is data 
+        return <FetchSuccess />
       }
-     */
+    }
+    else {
+      //Redirect to some error page saying that no results were found
+      return <FetchFailure />
+    }
+       */
+      
+  }
+}
+
+  retrieveClubNameData() {
+    //Search API GET request is done here!
     
     fetch(`http://localhost:8081/searchByName/` + this.state.searchElementName)
     .then(response => 
@@ -37,20 +58,11 @@ class Search extends Component {
     .then(result => {
       this.state.fetchedData = result
       console.log(this.state.fetchedData)
-      console.log(result)
+      this.showFailureorSuccess()
+      //console.log(result)
     })
     
-    if (this.state.fetchedData.length > 0) {
-      this.state.redirect = true
-      //Have a redirection to another page showing the results here!
-      if(this.state.redirect) {
-      //Redirect to an MPA here
-      
-      }
-    }
-    else {
-      //Redirect to some error page saying that no results were found
-    }
+    
 
     
   }
@@ -60,7 +72,17 @@ class Search extends Component {
     this.setState({ [event.target.name] : event.target.value})
     //console.log(this.state.searchElementName)
   }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.state.fetchedData != nextState.fetchedData
+  }
   render() {
+    /**
+     * const resultsArray = this.state.fetchedData.map(item =>(
+        <ClubCard name = {item.name} info = {item.intro}/>
+    ))
+     */
+    
     return (
 
       <div className="searchSpace">
@@ -94,7 +116,19 @@ class Search extends Component {
         <h2>
       Here you can find where your interests are and contacts for various clubs.
         </h2>
+        <div className = "searchResults">
+           
+        </div>
+
+      {/** <FetchSuccess searchResponses = {this.state.fetchedData}/> */}
+      
+      
+      
+
+
 </div>
+
+
       );
   }
 }
