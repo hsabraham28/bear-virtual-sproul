@@ -12,23 +12,23 @@ class Sort extends Component {
 
       <div className="sort-section">
         <h1>
-        Sort By
+          Sort By
         </h1>
 
         <div className="form-group">
-    <select className="form-control" id="exampleFormControlSelect1">
-      <option>Popular</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
- 
-      
+          <select className="form-control" id="exampleFormControlSelect1">
+            <option>Popular</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
 
-  </div>
-      );
+
+
+      </div>
+    );
   }
 }
 

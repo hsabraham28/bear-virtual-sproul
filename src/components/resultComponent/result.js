@@ -5,54 +5,50 @@ import oski from './oski-big.png';
 import ClubCard from './clubCardComponent/clubCard';
 
 
+function Result(props) {
+
+  return (
+
+    <div className="result-section">
+      <div className="rowOne">
+        <MDBRow>
+
+          <MDBCol md='2'>
+            <ClubCard />
+          </MDBCol>
+
+          <MDBCol md='2'>
+            <ClubCard />
+          </MDBCol>
+
+          <MDBCol md='2'>
+            <ClubCard />
+          </MDBCol>
+
+        </MDBRow>
+      </div>
 
 
+      <MDBRow>
+
+        <MDBCol md='2'>
+          <ClubCard />
+        </MDBCol>
+
+        <MDBCol md='2'>
+          <ClubCard />
+        </MDBCol>
+
+        <MDBCol md='2'>
+          <ClubCard />
+        </MDBCol>
+
+      </MDBRow>
 
 
-function Result(props){
-  
-    return (
-
-  <div className="result-section">
-  <div className="rowOne">      
- <MDBRow>
-
-      <MDBCol md='2'>
-      <ClubCard />
-      </MDBCol>
-
-      <MDBCol md='2'>
-      <ClubCard />
-      </MDBCol>
-
-      <MDBCol md='2'>
-      <ClubCard />
-      </MDBCol>
-
-    </MDBRow>
     </div>
-
-
-    <MDBRow>
-
-      <MDBCol md='2'>
-      <ClubCard />
-      </MDBCol>
-
-      <MDBCol md='2'>
-      <ClubCard />
-      </MDBCol>
-
-      <MDBCol md='2'>
-      <ClubCard />
-      </MDBCol>
-      
-    </MDBRow>
-      
-
-   </div>
-      );
-  }
+  );
+}
 
 
 

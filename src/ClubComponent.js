@@ -1,7 +1,14 @@
-import React from "react"
+import React from "react";
+import './Assets/css/layout.css';
+
 
 function ClubComponent(props) {
-    return props.clubArray
+    return (
+
+        <div className="vs--cards">
+            {props.clubArray}
+        </div>
+    )
 }
 
 
