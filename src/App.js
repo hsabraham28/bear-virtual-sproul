@@ -90,7 +90,17 @@ class App extends Component {
 
     //Case 3
     else if(searchName.length == 0 && tagParams.length>0) {
+      let accumulator = ""
+      for (let tag in tagParams) {
+        accumulator += "(" + tag + ")"
+      }
       console.log("Case 3 triggered")
+      fetch(`http://localhost:8081/searchMultipleTags/` + accumulator)
+      .then(response => response.json())
+      .then(result =>{
+        this.setState({organizations: result})
+        console.log(this.state.organizations)
+      })
     }
 
 
@@ -98,7 +108,7 @@ class App extends Component {
 }
 
   async componentDidMount() {
-    console.log("Should happen once!")
+    //console.log("Should happen once!")
     await fetch(`http://localhost:8081/getClubData`)
     .then(response => 
     response.json())
