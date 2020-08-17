@@ -15,22 +15,51 @@ class App extends Component {
     this.state = {
       organizations: [
       ],
-      searchDisplayName:""
+      searchDisplayName:"",
+      tagList:[]
   }
   this.componentDidMount = this.componentDidMount.bind(this)
-  this.updateOrganizations = this.updateOrganizations.bind(this)
-
+  this.updateSearchKey = this.updateSearchKey.bind(this)
+  this.updateTagState = this.updateTagState.bind(this)
+  this.fetchSearchData=this.fetchSearchData.bind(this)
   }
 
-  updateOrganizations(name, childData) {
-      this.setState(
-        {organizations: childData,
-         searchDisplayName: name
-        }
+  //Updated TagList 
+  updateTagState(updatedTags) {
+    this.setState(
+      {tagList: updatedTags}
       )
   }
 
+  //Updating Organizations
+  updateSearchKey(name) {
+      this.setState(
+        {
+         searchDisplayName: name
+        }
+      )
+      //Sends the fetch call here once the searchKey and tagList are updated - tagList gets updated real time FYI, while
+      // the searchKey gets updated once we click the button, which is when we should also send API request, causing component
+      // to rerender
+      this.fetchSearchData(this.state.searchDisplayName, this.state.tagList)
+
+  }
+
+  //The fetch call to backend Search API
+  fetchSearchData(searchName, tagParams) {
+    console.log("Calling fetchSearchData to consume backend API")
+    fetch(`http://localhost:8081/searchByName/` + searchName)
+    .then(response => 
+      response.json())
+    .then(result => {
+      this.setState({organizations: result})
+      console.log(this.state.organizations)
+      
+  })
+}
+
   async componentDidMount() {
+    console.log("Should happen once!")
     await fetch(`http://localhost:8081/getClubData`)
     .then(response => 
     response.json())
@@ -44,10 +73,15 @@ class App extends Component {
   //console.log(this.state.organizations)
   }
 
+
+
   render() {
+    /** Call fetch function here */
+   
     const mappedClubs = this.state.organizations.map(item => (
       <ClubCard name = {item.name} info = {item.intro}/>
     ))
+    
 
     
 
@@ -60,9 +94,9 @@ class App extends Component {
 
 
 <div className='rowB'>
-      <Search parentUpdateCB = {this.updateOrganizations}/>
+      <Search parentUpdateCB = {this.updateSearchKey}/>
       <div className='colA'>
-      <Filter />
+      <Filter filterParentUpdate = {this.updateTagState}/>
       </div>
       <Sort />
 

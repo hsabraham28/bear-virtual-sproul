@@ -16,10 +16,9 @@ class Search extends Component {
     this.state = {
       searchElementName: "",
       redirect: false,
-      fetchedData: []
     }
     this.changeSearchElementName = this.changeSearchElementName.bind(this)
-    this.retrieveClubNameData = this.retrieveClubNameData.bind(this)
+    this.callsAppCallBack = this.callsAppCallBack.bind(this)
     this.showFailureorSuccess = this.showFailureorSuccess.bind(this)
   }
 
@@ -49,25 +48,17 @@ class Search extends Component {
   }
 }
 
-  retrieveClubNameData() {
+  callsAppCallBack() {
     //Search API GET request is done here!
+    this.props.parentUpdateCB(this.state.searchElementName)
     
-    fetch(`http://localhost:8081/searchByName/` + this.state.searchElementName)
-    .then(response => 
-      response.json())
-    .then(result => {
-      this.state.fetchedData = result
-      console.log(this.state.fetchedData)
-      this.showFailureorSuccess()
-      this.props.parentUpdateCB(this.state.searchElementName, this.state.fetchedData)
-      console.log(this.state.searchElementName)
       //console.log(result)
-    })
+  }
     
     
 
     
-  }
+  
 
   changeSearchElementName(event) {
     //console.log("Going here")
@@ -106,7 +97,7 @@ class Search extends Component {
       <MDBFormInline className="md-form">
         <input className="form-control form-control-lg ml-5 w-75" onChange = {this.changeSearchElementName} name = "searchElementName" type="text" placeholder="Search for Club Names" aria-label="Search" />
         <div className="sicon">
-      <button onClick = {this.retrieveClubNameData} type="button" className="btn-light btn-xs"><MDBIcon icon="search" /></button>
+      <button onClick = {this.callsAppCallBack} type="button" className="btn-light btn-xs"><MDBIcon icon="search" /></button>
       </div>
       </MDBFormInline>
       </MDBCol>
