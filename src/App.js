@@ -33,17 +33,17 @@ class App extends Component {
 
   //Updating Organizations
   updateSearchKey(name) {
-    console.log("Name is ", name)
+    //console.log("Name is ", name)
       this.setState(
         {
-         searchDisplayName: name
-        }
+          searchDisplayName: name
+        }, () => {this.fetchSearchData(this.state.searchDisplayName, this.state.tagList)}
       )
       //Sends the fetch call here once the searchKey and tagList are updated - tagList gets updated real time FYI, while
       // the searchKey gets updated once we click the button, which is when we should also send API request, causing component
       // to rerender
-      console.log("Before fetch method, the skey is ", this.state.searchDisplayName)
-      this.fetchSearchData(this.state.searchDisplayName, this.state.tagList)
+      //console.log("Before fetch method, the skey is ", this.state.searchDisplayName)
+      
 
   }
 

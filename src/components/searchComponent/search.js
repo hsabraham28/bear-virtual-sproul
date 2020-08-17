@@ -49,7 +49,7 @@ class Search extends Component {
 }
 
   callsAppCallBack() {
-    console.log("Search child component is updating the search key")
+    //console.log("Search child component is updating the search key")
     this.props.parentUpdateCB(this.state.searchElementName)
     
   }
