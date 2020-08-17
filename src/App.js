@@ -59,6 +59,7 @@ class App extends Component {
     console.log("Calling fetchSearchData to consume backend API")
     console.log(searchName.length)
     console.log(tagParams.length)
+    //Case 1
     if(searchName.length>0 && tagParams.length==0) {
       fetch(`http://localhost:8081/searchByName/` + searchName)
     .then(response => 
@@ -69,6 +70,17 @@ class App extends Component {
       
   })
     }
+
+    //Case 2
+    else if(searchName.length >0 && tagParams.length>0) {
+      console.log("Case 2 triggered")
+    }
+
+    //Case 3
+    else if(searchName.length == 0 && tagParams.length>0) {
+      console.log("Case 3 triggered")
+    }
+
 
     
 }
