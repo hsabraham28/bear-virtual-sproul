@@ -1,0 +1,94 @@
+.App {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto 1fr;
+}
+
+.toplevel-header {
+    grid-column: 1 / 2; 
+}
+
+.vs--sidebar {
+    padding: 1em;
+}
+
+/** Big flex **/
+.big-flex {
+    grid-column: 1 / 2;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.vs--sidebar {
+    flex: 1 0 25em;
+    margin-right: auto;
+    padding: 2em;
+}
+
+.vs--main {
+    flex: 10 0 20em;
+    padding: 2em;
+}
+
+/** Cards **/
+.vs--cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
+    grid-gap: 1em;
+}
+
+.vs--cards>* {
+    padding: 2em 0.5em 2em;
+}
+
+/** Overrides **/
+.sort-section {
+    left: 0;
+}
+
+.toplevel-header {
+    padding-bottom: 1em;
+}
+
+.welcome-message>* {
+    color: #004687;
+}
+
+.filter-section {
+    right: 0;
+}
+
+.md-form {
+    margin: 0em !important;
+}
+
+/** Search.js **/
+.searchSpace * {
+    padding: 0em;
+    margin: 0em;
+}
+
+.searchSpace {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/** Styling **/
+.vs--sidebar {
+    border-right: 1px rgb(0, 0, 0, 0.2) solid;
+}
+
+.vs--sidebar>* {
+    padding: 1em;
+}
+
+.vs--sidebar>*:first-child {
+    border-bottom: 1px rgb(0, 0, 0, 0.2) solid;
+    padding-top: 0em;
+}
+
+/** Header.js **/
+.navbar-nav {
+    margin-left: auto !important;
+}
