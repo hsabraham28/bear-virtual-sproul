@@ -73,7 +73,19 @@ class App extends Component {
 
     //Case 2
     else if(searchName.length >0 && tagParams.length>0) {
+      let accumulator = ""
+      for (let tag in tagParams) {
+        accumulator += "(" + tag + ")"
+      }
+      //Send API call using this string separated by pattern
       console.log("Case 2 triggered")
+      fetch(`http://localhost:8081/searchTagsAndKey/` + searchName + "/"
+      + accumulator)
+      .then(response => response.json())
+      .then(result =>{
+        this.setState({organizations: result})
+        console.log(this.state.organizations)
+      })
     }
 
     //Case 3
