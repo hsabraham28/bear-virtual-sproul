@@ -33,6 +33,7 @@ class App extends Component {
 
   //Updating Organizations
   updateSearchKey(name) {
+    console.log("Name is ", name)
       this.setState(
         {
          searchDisplayName: name
@@ -41,14 +42,25 @@ class App extends Component {
       //Sends the fetch call here once the searchKey and tagList are updated - tagList gets updated real time FYI, while
       // the searchKey gets updated once we click the button, which is when we should also send API request, causing component
       // to rerender
+      console.log("Before fetch method, the skey is ", this.state.searchDisplayName)
       this.fetchSearchData(this.state.searchDisplayName, this.state.tagList)
 
   }
 
   //The fetch call to backend Search API
+  //CORS error being thrown for some reason? - Will get fixed once we host everything somewhere
   fetchSearchData(searchName, tagParams) {
+    //Need to alter logic here such the right API can be chosen
+    /**
+     * Case 1 - SearchKey only, no tagList
+     * Case 2 - SearchKey and tagList of size x
+     * Case 3 - No SearchKey and tagList of size x only
+     */
     console.log("Calling fetchSearchData to consume backend API")
-    fetch(`http://localhost:8081/searchByName/` + searchName)
+    console.log(searchName.length)
+    console.log(tagParams.length)
+    if(searchName.length>0 && tagParams.length==0) {
+      fetch(`http://localhost:8081/searchByName/` + searchName)
     .then(response => 
       response.json())
     .then(result => {
@@ -56,6 +68,9 @@ class App extends Component {
       console.log(this.state.organizations)
       
   })
+    }
+
+    
 }
 
   async componentDidMount() {

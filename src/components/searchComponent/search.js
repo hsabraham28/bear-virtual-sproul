@@ -49,10 +49,9 @@ class Search extends Component {
 }
 
   callsAppCallBack() {
-    //Search API GET request is done here!
+    console.log("Search child component is updating the search key")
     this.props.parentUpdateCB(this.state.searchElementName)
     
-      //console.log(result)
   }
     
     
