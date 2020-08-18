@@ -9,7 +9,7 @@ import { MDBCol, MDBFormInline, MDBIcon } from "mdbreact";
 class Filter extends Component {
 
   constructor() {
-    super()
+    super()     //fixme
     this.state = {
       Technology: false,
       Music: false,
